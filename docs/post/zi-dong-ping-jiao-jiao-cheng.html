@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="//cdn.staticfile.net/Primer/21.0.7/primer.css" rel="stylesheet" />
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 前言
+为缓解评教压力，网上已有许多评教插件，但学校评教系统各异，插件并不通用，且插件跟不上评教系统更新的速度。">
+<meta property="og:title" content="自动评教教程">
+<meta property="og:description" content="# 前言
+为缓解评教压力，网上已有许多评教插件，但学校评教系统各异，插件并不通用，且插件跟不上评教系统更新的速度。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://forgeters.github.io/post/zi-dong-ping-jiao-jiao-cheng.html">
+<meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
+<title>自动评教教程</title>
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">自动评教教程</h1>
+<div class="title-right">
+    <a href="https://forgeters.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/forgeters/forgeters.github.io/issues/2" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>前言</h1>
+<p>为缓解评教压力，网上已有许多评教插件，但学校评教系统各异，插件并不通用，且插件跟不上评教系统更新的速度。这里提供一个利用Automa插件录制工作流来快速、简便完成评教的方法，能针对各种评教系统保证长期可用。</p>
+<h1>环境准备</h1>
+<p>浏览器：Edge、Google、火狐等可以安装插件的浏览器，这里用Edge演示<br>
+安装插件：<br>
+我们需要安装Automa这个浏览器插件，首先打开你的浏览器，找到“拓展”这项功能</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/15666f4a-540d-4665-8967-2960cdc0da09"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/15666f4a-540d-4665-8967-2960cdc0da09" alt="image" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/65a6a160-7980-47e7-a3f1-1bb1f20b7cb1"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/65a6a160-7980-47e7-a3f1-1bb1f20b7cb1" alt="image" style="max-width: 100%;"></a></p>
+<p>我们有两种方法安装插件<br>
+①在线安装<br>
+这是插件的中文文档，提供了插件的商店安装地址：<br>
+<a href="https://automa.wiki/" rel="nofollow">https://automa.wiki/</a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/5a5ac736-a32b-4326-8280-9d420dd9aa09"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/5a5ac736-a32b-4326-8280-9d420dd9aa09" alt="image" style="max-width: 100%;"></a></p>
+<p>对于Edge和Google浏览器，可以选择“Chrome网上应用商店”，火狐浏览器则选择第二个，但访问Chrome网上应用商店需要科学上网，如果你不知道如何操作，请选择离线安装。<br>
+②离线安装<br>
+下载我提供的文件：<br>
+<a href="https://mailsjlueducn-my.sharepoint.com/:u:/g/personal/wanghr3021_mails_jlu_edu_cn/Efgt3QWpaEdEsgJY5CBVGdABShN1RNy-_legvwf8n7P02A?e=OJ75b7" rel="nofollow">https://mailsjlueducn-my.sharepoint.com/:u:/g/personal/wanghr3021_mails_jlu_edu_cn/Efgt3QWpaEdEsgJY5CBVGdABShN1RNy-_legvwf8n7P02A?e=OJ75b7</a><br>
+ps：请不要在微信中打开链接<br>
+你应该会得到一个后缀为crx的文件，如下图：</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/8a6d5481-f6fd-4835-8b73-a94e099384c3"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/8a6d5481-f6fd-4835-8b73-a94e099384c3" alt="image" style="max-width: 100%;"></a></p>
+<p>返回浏览器的拓展管理界面，打开“开发人员模式”，然后将crx文件拖入浏览器安装，点击添加拓展</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/28001d29-6c69-4f80-a47b-d0c21808620c"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/28001d29-6c69-4f80-a47b-d0c21808620c" alt="image" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/8fa6e237-3c60-4fe7-84ab-cd7dc2883f45"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/8fa6e237-3c60-4fe7-84ab-cd7dc2883f45" alt="image" style="max-width: 100%;"></a></p>
+<p>然后你就会看到拓展的主界面，如果没有，自行启动拓展的主菜单界面</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/8c697f52-e58d-4bb7-8a11-f2014417e9cc"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/8c697f52-e58d-4bb7-8a11-f2014417e9cc" alt="image" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/58208049-6940-4274-91ef-e4283f499b61"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/58208049-6940-4274-91ef-e4283f499b61" alt="image" style="max-width: 100%;"></a></p>
+<p>ps：设置-language可以选择中文<br>
+到这里已经成功大半了！</p>
+<h1>脚本录制</h1>
+<p>打开你的评教页面，进入到具体的老师界面</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/948cdcc9-f06f-4d74-9700-bd86e9dee8fd"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/948cdcc9-f06f-4d74-9700-bd86e9dee8fd" alt="image" style="max-width: 100%;"></a></p>
+<p>返回插件主界面，点击新建工作流-小三角-录制工作流，名称描述随意</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/713a71d3-a496-4bc5-b543-94aa5c2c10e2"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/713a71d3-a496-4bc5-b543-94aa5c2c10e2" alt="image" style="max-width: 100%;"></a></p>
+<p>在第一个老师处正常评教，完成后记得点击“下一位老师”以方便循环运行，点完这个按钮后就可以停止录制了<br>
+由于我已经评完了这里就放不了图了<br>
+然后你会得到一个评教脚本</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/051a97e3-299b-4b0b-aba6-8d4d28ecbf0b"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/051a97e3-299b-4b0b-aba6-8d4d28ecbf0b" alt="image" style="max-width: 100%;"></a></p>
+<p>点击你的脚本稍作修改以使其能够循环执行“评教-下一位老师-评教”这个过程<br>
+①将“新建标签页”替换为“活动标签页”</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/a94a191b-62a9-43be-92a2-f4f4eaacef3b"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/a94a191b-62a9-43be-92a2-f4f4eaacef3b" alt="image" style="max-width: 100%;"></a></p>
+<p>②将脚本末端与首段相连</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/956f6dd6-0018-455f-b9b3-050453389a0d"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/956f6dd6-0018-455f-b9b3-050453389a0d" alt="image" style="max-width: 100%;"></a></p>
+<p>③修改模块间延迟以免过快出错</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/f7e42004-8c57-4080-b3ce-739bb97f82d2"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/f7e42004-8c57-4080-b3ce-739bb97f82d2" alt="image" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/560c8455-f70c-4d51-af91-a1b90b888c40"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/560c8455-f70c-4d51-af91-a1b90b888c40" alt="image" style="max-width: 100%;"></a></p>
+<p>这里可以自定义，越小评教越快，但容易出错卡死，越大评教越慢，建议100ms<br>
+完成后别忘记点击右上角保存！</p>
+<h1>运行脚本</h1>
+<p>如果你有想特别好评或特别差评的老师，请手动提前评好，脚本会自动略过，重复你录制的那个评教内容<br>
+返回待评教的教师界面，点击拓展-你的脚本-运行，评教过程中浏览器可以处于后台</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/68251fda-9ac0-46bc-b09e-c8b0a79b7336"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/68251fda-9ac0-46bc-b09e-c8b0a79b7336" alt="image" style="max-width: 100%;"></a></p>
+<p>然后就可以解放双手啦，插件会自动评教直至完成所有相同的评教，中途卡死请重新启动脚本<br>
+对于选项不同的评教会报错停止，需要手动评教，不过这种一般是总评，就一两个</p>
+<h1>分享你的脚本/导入别人脚本</h1>
+<p>导出脚本：完成后可以分享给你的同学，避免重复劳动</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/cafd82d3-a8f4-48ae-8b69-611366ab0227"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/cafd82d3-a8f4-48ae-8b69-611366ab0227" alt="image" style="max-width: 100%;"></a></p>
+<p>导入文件：新建工作流-小三角-导入工作流-选择脚本文件</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/forgeters/forgeters.github.io/assets/98031979/b8ace62d-85a6-41a7-b952-8ca8d5dae581"><img src="https://github.com/forgeters/forgeters.github.io/assets/98031979/b8ace62d-85a6-41a7-b952-8ca8d5dae581" alt="image" style="max-width: 100%;"></a></p>
+<p>只要保证评教的选项一致脚本即可通用<br>
+最后附上我录制的脚本，是否可用自行测试，建议自己录制<br>
+<a href="https://mailsjlueducn-my.sharepoint.com/:u:/g/personal/wanghr3021_mails_jlu_edu_cn/ERqwyolZhmdDi5pjJcUwoTABDT_FXIDb_Zte2XaKPD7sRA?e=vexACF" rel="nofollow">https://mailsjlueducn-my.sharepoint.com/:u:/g/personal/wanghr3021_mails_jlu_edu_cn/ERqwyolZhmdDi5pjJcUwoTABDT_FXIDb_Zte2XaKPD7sRA?e=vexACF</a></p>
+<h1>结语</h1>
+<p>这个方法测试了三次评教均可使用，但每次评教系统的选项和要求都在变化，需要略作修改，遇到问题请善用百度<br>
+最后，希望这份教程能帮助大家从无意义的评教中解放出来</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+</div>
+    <div id="footer">Copyright © <span id="year"></span><a href="https://forgeters.github.io"> ⌬ </a>
+<p>
+<span id="runday"></span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a>
+</p>
+
+<script>
+if(""!=""){
+    var now=new Date();
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("year").innerHTML=now.getFullYear();
+    if(""!=""){document.getElementById("runday").innerHTML=" • "+"网站运行"+diffDay+"天"+" • ";}
+    else{document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";}
+}
+</script>
+</div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n\n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","forgeters/forgeters.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+</script>
+
+
+</html>
