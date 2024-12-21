@@ -1,5 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>⌬</title><link>https://forgeters.github.io</link><description>随便写写</description><copyright>⌬</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s3.bmp.ovh/imgs/2024/06/23/5d8e2f670872e63c.jpg</url><title>avatar</title><link>https://forgeters.github.io</link></image><lastBuildDate>Sat, 09 Nov 2024 16:22:04 +0000</lastBuildDate><managingEditor>⌬</managingEditor><ttl>60</ttl><webMaster>⌬</webMaster><item><title>自动评教教程</title><link>https://forgeters.github.io/post/zi-dong-ping-jiao-jiao-cheng.html</link><description># 前言&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>⌬</title><link>https://forgeters.github.io</link><description>随便写写</description><copyright>⌬</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s3.bmp.ovh/imgs/2024/06/23/5d8e2f670872e63c.jpg</url><title>avatar</title><link>https://forgeters.github.io</link></image><lastBuildDate>Sat, 21 Dec 2024 07:53:42 +0000</lastBuildDate><managingEditor>⌬</managingEditor><ttl>60</ttl><webMaster>⌬</webMaster><item><title>JLU 自动评教油猴脚本</title><link>https://forgeters.github.io/post/JLU%20-zi-dong-ping-jiao-you-hou-jiao-ben.html</link><description># 使用方法&#13;
+- 下载脚本 [OneDrive](https://mailsjlueducn-my.sharepoint.com/:u:/g/personal/wanghr3021_mails_jlu_edu_cn/Ec9L3i1RXMhBu2S-CbBEiRoBFc-O3ZjwbSAGk0P8i2AlZA?e=ZdywCd)&#13;
+- 导入油猴管理器，并启用脚本&#13;
+- 进入评教系统，选择一位具体老师&#13;
+- 点击按钮开始自动评教，关闭网页或刷新页面来停止脚本&#13;
+# 注意事项&#13;
+- 脚本默认全部选择第一个选项，任选一道题改为第二个选项以防无法提交&#13;
+- 评价原因从预设的几句话中任选一句填入，可修改脚本来自定义&#13;
+- 脚本一次运行可自行完成一门课程所有老师评教，不同课程之间需要手动切换&#13;
+- 需要忽略或差评的老师请提前手动评价，脚本会自行略过&#13;
+&#13;
+_ps: 仅供学习交流，自行承担使用脚本带来的一切后果_$$$$$</description><guid isPermaLink="true">https://forgeters.github.io/post/JLU%20-zi-dong-ping-jiao-you-hou-jiao-ben.html</guid><pubDate>Sat, 21 Dec 2024 07:53:19 +0000</pubDate></item><item><title>自动评教教程</title><link>https://forgeters.github.io/post/zi-dong-ping-jiao-jiao-cheng.html</link><description># 前言&#13;
 为缓解评教压力，网上已有许多评教插件，但学校评教系统各异，插件并不通用，且插件跟不上评教系统更新的速度。这里提供一个利用Automa插件录制工作流来快速、简便完成评教的方法，能针对各种评教系统保证长期可用。&#13;
 # 环境准备&#13;
 浏览器：Edge、Google、火狐等可以安装插件的浏览器，这里用Edge演示&#13;
