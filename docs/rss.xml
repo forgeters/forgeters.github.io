@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>⌬</title><link>https://forgeters.github.io</link><description>随便写写</description><copyright>⌬</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://youke1.picui.cn/s1/2025/08/17/68a1e7d6af36f.jpg</url><title>avatar</title><link>https://forgeters.github.io</link></image><lastBuildDate>Tue, 19 Aug 2025 03:03:49 +0000</lastBuildDate><managingEditor>⌬</managingEditor><ttl>60</ttl><webMaster>⌬</webMaster><item><title>JLU 自动评教油猴脚本</title><link>https://forgeters.github.io/post/JLU%20-zi-dong-ping-jiao-you-hou-jiao-ben.html</link><description># 使用方法&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>⌬</title><link>https://forgeters.github.io</link><description>随便写写</description><copyright>⌬</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://youke1.picui.cn/s1/2025/08/17/68a1e7d6af36f.jpg</url><title>avatar</title><link>https://forgeters.github.io</link></image><lastBuildDate>Tue, 19 Aug 2025 03:15:59 +0000</lastBuildDate><managingEditor>⌬</managingEditor><ttl>60</ttl><webMaster>⌬</webMaster><item><title>JLU 自动评教油猴脚本</title><link>https://forgeters.github.io/post/JLU%20-zi-dong-ping-jiao-you-hou-jiao-ben.html</link><description># 使用方法&#13;
 - 下载脚本 [OneDrive](https://mailsjlueducn-my.sharepoint.com/:u:/g/personal/wanghr3021_mails_jlu_edu_cn/Ec9L3i1RXMhBu2S-CbBEiRoBFc-O3ZjwbSAGk0P8i2AlZA?e=ZdywCd)&#13;
 - 导入油猴管理器，并启用脚本&#13;
 - 进入评教系统，选择一位具体老师&#13;
@@ -105,7 +105,4 @@ https://mailsjlueducn-my.sharepoint.com/:u:/g/personal/wanghr3021_mails_jlu_edu_
 # 结语&#13;
 这个方法测试了三次评教均可使用，但每次评教系统的选项和要求都在变化，需要略作修改，遇到问题请善用百度&#13;
 最后，希望这份教程能帮助大家从无意义的评教中解放出来&#13;
-$$$$$</description><guid isPermaLink="true">https://forgeters.github.io/post/zi-dong-ping-jiao-jiao-cheng.html</guid><pubDate>Sat, 22 Jun 2024 01:51:05 +0000</pubDate></item><item><title>测试</title><link>https://forgeters.github.io/post/ce-shi.html</link><description># 一级标题&#13;
-## 二级标题&#13;
-正文&#13;
-$$$$$</description><guid isPermaLink="true">https://forgeters.github.io/post/ce-shi.html</guid><pubDate>Sat, 22 Jun 2024 01:18:04 +0000</pubDate></item></channel></rss>
+$$$$$</description><guid isPermaLink="true">https://forgeters.github.io/post/zi-dong-ping-jiao-jiao-cheng.html</guid><pubDate>Sat, 22 Jun 2024 01:51:05 +0000</pubDate></item></channel></rss>
