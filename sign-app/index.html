@@ -246,7 +246,7 @@
 
     <div id="content">
         <h2>多账号签到系统</h2>
-        <p>一键管理多个账号的签到任务</p>
+        <p>一键管理多个账号的签到任务（前端直接执行）</p>
         
         <div class="sign-container">
             <div class="account-form">
@@ -289,7 +289,7 @@
 
     <script>
         var IconList = {
-            'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z',
+            'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 01-1.5 0h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z',
             'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z',
             'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z',
             'search': 'M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z',
@@ -325,7 +325,6 @@
         }
 
         // 签到系统功能
-        const API_BASE = 'https://forget.pythonanywhere.com';
         let accounts = JSON.parse(localStorage.getItem('signAccounts') || '[]');
 
         // 初始化显示账号
@@ -409,42 +408,139 @@
             `;
 
             try {
-                const response = await fetch(API_BASE + '/api/sign', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ accounts: accounts })
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    resultContent.innerHTML = `
-                        <h4>签到完成</h4>
-                        <p>成功: ${data.success_count} / 总计: ${data.total_count}</p>
-                        ${data.results.map(result => `
-                            <div class="${result.success ? 'success' : 'error'}">
-                                <strong>${result.account}</strong>: ${result.message}
-                            </div>
-                        `).join('')}
-                    `;
-                } else {
-                    resultContent.innerHTML = `
-                        <div class="error">
-                            <strong>错误:</strong> ${data.error || '签到失败'}
-                        </div>
-                    `;
+                // 在前端直接执行签到
+                const results = [];
+                
+                for (const account of accounts) {
+                    try {
+                        const result = await signInDirectly(account);
+                        results.push(result);
+                    } catch (error) {
+                        results.push({
+                            success: false,
+                            message: error.message,
+                            account: account.name || account.username
+                        });
+                    }
                 }
+
+                const successCount = results.filter(r => r.success).length;
+                
+                resultContent.innerHTML = `
+                    <h4>签到完成</h4>
+                    <p>成功: ${successCount} / 总计: ${results.length}</p>
+                    ${results.map(result => `
+                        <div class="${result.success ? 'success' : 'error'}">
+                            <strong>${result.account}</strong>: ${result.message}
+                        </div>
+                    `).join('')}
+                `;
+                
             } catch (error) {
                 resultContent.innerHTML = `
                     <div class="error">
-                        <strong>网络错误:</strong> 请检查网络连接或API服务状态
+                        <strong>请求失败:</strong> ${error.message || '请检查网络连接'}
                     </div>
                 `;
             } finally {
                 btn.disabled = false;
                 btn.textContent = '开始签到';
+            }
+        }
+
+        async function signInDirectly(account) {
+            try {
+                console.log(`开始处理账号: ${account.name || account.username}`);
+                
+                // 1. 登录
+                const loginFormData = new FormData();
+                loginFormData.append('username', account.username);
+                loginFormData.append('password', account.password);
+                loginFormData.append('redirect_url', account.redirect_url);
+
+                const loginResponse = await fetch('https://yun.ccmtv.cn/admin.php/wx/login/check.html', {
+                    method: 'POST',
+                    body: loginFormData,
+                    headers: {
+                        'Referer': `https://yun.ccmtv.cn/admin.php/wx/Login?redirect_url=${encodeURIComponent(account.redirect_url)}`,
+                        'Origin': 'https://yun.ccmtv.cn'
+                    },
+                    credentials: 'omit'
+                });
+
+                console.log('登录响应状态:', loginResponse.status);
+                
+                if (!loginResponse.ok) {
+                    throw new Error(`登录失败: HTTP ${loginResponse.status}`);
+                }
+
+                let loginResult;
+                try {
+                    loginResult = await loginResponse.json();
+                    console.log('登录结果:', loginResult);
+                } catch (e) {
+                    throw new Error('登录响应格式错误');
+                }
+
+                if (!loginResult || loginResult.status !== 1) {
+                    throw new Error(loginResult?.message || '登录失败');
+                }
+
+                // 2. 签到
+                const signFormData = new FormData();
+                signFormData.append('group_name', '正常班');
+                signFormData.append('date', new Date().toISOString().split('T')[0]);
+                signFormData.append('ip', '101.132.57.162');
+                signFormData.append('lng', '125.305448');
+                signFormData.append('lat', '43.876753');
+                signFormData.append('address', '吉林省长春市朝阳区红旗街道吉林大学第一医院吉林大学白求恩第一医院');
+                signFormData.append('sign_port', 'wx');
+
+                const signResponse = await fetch('https://yunsxs.ccmtv.cn/index.php/wx/SignIn/userMySignPost', {
+                    method: 'POST',
+                    body: signFormData,
+                    headers: {
+                        'Referer': 'https://yunsxs.ccmtv.cn/index.php/wx/SignIn',
+                        'Origin': 'https://yunsxs.ccmtv.cn'
+                    },
+                    credentials: 'omit'
+                });
+
+                console.log('签到响应状态:', signResponse.status);
+                
+                if (!signResponse.ok) {
+                    throw new Error(`签到请求失败: HTTP ${signResponse.status}`);
+                }
+
+                let signResult;
+                try {
+                    signResult = await signResponse.json();
+                    console.log('签到结果:', signResult);
+                } catch (e) {
+                    throw new Error('签到响应格式错误');
+                }
+
+                if (signResult && signResult.status === "1") {
+                    return {
+                        success: true,
+                        message: signResult.errorMessage || '签到成功',
+                        account: account.name || account.username
+                    };
+                } else {
+                    return {
+                        success: false,
+                        message: signResult?.errorMessage || '签到失败',
+                        account: account.name || account.username
+                    };
+                }
+                
+            } catch (error) {
+                console.error('签到错误:', error);
+                return {
+                    success: false,
+                    message: error.message,
+                    account: account.name || account.username
+                };
             }
         }
 
@@ -464,7 +560,7 @@
             document.getElementById("runday").innerHTML = "网站运行" + diffDay + "天" + " • ";
         }
 
-        console.log("\n %c 签到系统 - 基于Gmeek风格 %c\n", "padding:5px 0;background:#02d81d;color:#fff", "");
+        console.log("\n %c 前端直接签到系统 - 基于Gmeek风格 %c\n", "padding:5px 0;background:#02d81d;color:#fff", "");
     </script>
 </body>
 </html>
